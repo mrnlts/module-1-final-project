@@ -21,9 +21,80 @@ Extra: when you earn a success trophy, it unlocks a harder level next time you p
 * * *
 ## MVP
 ### Technique
+HTML5 __Canvas__, __¿DOM?__ and Vanilla __Javascript__
 
-- acomodar y desacomodar huéspedes
-- dibujitos de mesas y de clientes
-- setinterval de tiempo de espera max de clientes
-- una vez sentados tienen tiempo max para pagar 
-- pierdes cuando superas numero de clientes acumulados en cola (arr.length > ...) o cuando tienen que esperar demasiado en mesa (cuando termina el interval)
+### Game states
+* __Start Screen__
+  * Title
+  * Play button
+  * How to play button
+* __Game Screen__
+  * Queue
+  * Customers
+  * Tables
+  * Assign customer button
+  * Collect button
+* __Game Over - Win Screen__
+  * Play again button
+* __Game Over - Lose Screen__
+  * Play again button
+### Game
+* Random customers arrive and appear on the queue
+* Empty tables have buttons to assign customers from queue
+* When player clicks on the table buttons, a table is assigned to the first costumer from the queue
+* Once table is assigned, eating countdown begins and table button displays time left, disabling button
+* Once countdown is finished, table button displays "Collect"
+* Click on collect to get the bill and clear the table
+  * If >10s pass after collect button is activated, costumer status changes to angry and Game Over is displayed
+  * If max length of queue is achieved,  Game Over is displayed
+* If 5 minutes pass without angry costumers or long queues, Win screen is displayed
+* From both win/game over screens, player can go back to main screen
+* * *
+## Data structure
+__main.js__
+````
+displayStartScreen(id);
+displayGameScreen(id);
+displayGameOverWinScreen(id);
+displayGameOverLoseScreen(id);
+hideStartScreen();
+hideGameScreen();
+hideGameOverWinScreen();
+hideGameOverLoseScreen();
+class Game {
+    constructor() {
+        this.queue;
+        this.table1 = {
+            status: empty/eating/finished;
+        }
+        this.table2 = {
+            status: empty/eating/finished;
+        }
+        this.table3 = {
+            status: empty/eating/finished;
+        }
+        this.table4 = {
+            status: empty/eating/finished;
+        }
+    }
+    start();
+}
+var game = new Game();
+game.start();
+````
+__Game.js__
+````
+function drawBoard(){};
+function drawCostumer(){};
+function displayAssignButton(){};
+function displayTimer(){};
+function collectBill(){};
+function removeFromQueue();
+function addToTable();
+function editQueue();
+function assignCostumer(){
+    removeFromQueue(); 
+    addToTable(); 
+    editQueue();
+}
+````

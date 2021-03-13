@@ -1,23 +1,16 @@
-# _Restaurant madness_, a challenge game for your test buds and your brain!
-The purpose of the game is to successfully finish a lunch session at your restaurant. You will play as the _mâitre_, the chef, the waiter and the cashier. Keep the costumers happy and get as many tips as you can! The game screen is an interface of the restaurant where you can see tables, clients, ingredients, orders, kitchen devices and the cash box. 
+# _Restaurant madness_, a challenge for your taste buds and your attention!
+The purpose of the game is to successfully finish a lunch session at your restaurant. You will play as the _mâitre_, the waiter and _le cashier_. Keep the costumers happy so that they leave good reviews of our restaurant on TripAdvisor! 
 
-The **main character** is represented by an image of a young mâitre whose gender and name are defined by the player at the begginning. 
-- The movement of the main character is horizontal, from the bar to the kitchen and back.
-- Keyboard is used to make the player move horizontally. The table-assigning and order-taking is done with mouse clicks.
-- Points are accumulated for every happy costumer.
+The game screen is an interface of the restaurant where you can see the tables and the client queue. 
 
-The **costumers** come to the restaurant, are assigned a seat, have their orders taken, food is served, they eat and they pay. 
-- _Happy costumer_: high level of satisfaction with the service (will leave a tip & a good review on TripAdvisor).
-- _Suspicious costumer_: either too much time has passed for the waiter to assign a seat, to take the order or to bring the food (will pay for the food but not give a tip). 
-- _Angry costumer_: has received a bad service (> 2 delays/errors with their orders), this costumer leaves without paying & will write a bad review on TripAdvisor.
+The **player** is responsible for assigning customers to the tables and stay alert to when they finish eating and want to pay. This is important, since making the costumers wait for payment can make them angry! 
 
+The **costumers** come to the restaurant, are assigned a seat, they eat and they pay. Customer satisfaction is very relevant to win the game. We must be quick in collecting the bills from the customers that have finished their lunch, and try to avoid long queues.
 
-The game ends when the lunch time is finished (5 minutes), and it can be either a succesful service, a regular one or a disaster. Each one implies a different "reward", which includes the player's name on it.
-- A **success trophy** is handled at game over when > 50% of the costumers have given a tip, less than 5 errors have been made & 90% of the orders have been delivered. 
-- A **regular diploma** is given at game over when 10-50% of the costumers have tips, 5-10 errors were made & 70-90% of the orders were delivered. 
-- A **disaster sticker** is received when <10% costumers left tips, >10 errors were made & <70% orders were delivered. 
+The game ends when the lunch time is finished (5 minutes), and it can be either a succesful service or a disaster. Each one implies a different "reward", which includes the player's name on it.
+- A **success trophy** is handled at game over when lunch time has finished without angry costumers. 
+- A **disaster sticker** is received when the queue was too long or the waiter was too slow. 
 
-Extra: when you earn a success trophy, it unlocks a harder level next time you play (more recipes added to the menu, more clients/minute, less time to prepare the food).
 * * *
 ## MVP
 ### Technique

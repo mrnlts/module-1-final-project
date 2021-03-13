@@ -5,3 +5,28 @@
 .hide{
     display: none;
 }
+
+#splashScreen {
+    width: max-content;
+}
+
+#splashScreen button {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    height: 10%;
+    width: 20%;
+    font-size: 30px;
+    color: purple;
+    background-color: yellow;
+    border: 5px purple solid;
+
+}
+
+#start {
+    left: 50%;
+}
+
+#howTo {
+    left: 20%;
+}

@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM is loaded');
-    function generateSplashScreen() {
-        const intro = document.getElementById('intro');
-        intro.innerHTML = `
-        <div>
-            <button id="play">Play</button>
-        </div>`;
-
-        const playButton = document.querySelector('#play');
-        playButton.addEventListener('click', () => {
-            intro.classList.add('hide');
-            const game = document.getElementById('game');
-            game.classList.remove('hide');
-            game.classList.add('show');
-        })
-    }
-    generateSplashScreen();
-
-    function printGameOver() {
-        //callback
-    }
 });
+
+class Game {
+    constructor() {
+        // this.queue;
+        // this.table1 = {
+        //     status: empty/eating/finished;
+        // }
+        // this.table2 = {
+        //     status: empty/eating/finished;
+        // }
+        // this.table3 = {
+        //     status: empty/eating/finished;
+        // }
+        // this.table4 = {
+        //     status: empty/eating/finished;
+        // }
+}
+}

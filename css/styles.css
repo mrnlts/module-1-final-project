@@ -42,7 +42,7 @@
 #howToScreen button{
     position: absolute;
     z-index: 100;
-    height: 17%;
+    height: 17%; 
     width: 30%;
     left: 35%;
     margin-top: 30px;

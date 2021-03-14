@@ -52,7 +52,7 @@ function buildLoseScreen() {
     loseScreen.classList.add("show");
 }
 
-//BUTTON-RELATED FUNCTIONS 
+//BUTTON-RELATED FUNCTIONS  
 function startGameClick() {
     destroySplashScreen();
     buildGameScreen();

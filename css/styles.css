@@ -1,21 +1,14 @@
+/*COMMON STYLES*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 *{
     box-sizing: border-box;
 }
-
 .show {
     display: block;
 }
-
 .hide{
     display: none;
 }
-
-#splashScreen img{
-    width: 100%;
-}
-
 button {
     height: 17%;
     width: 30%;
@@ -35,8 +28,8 @@ button {
     transition: 0.5s;
     margin: 1em;
     background-color: rgb(182, 60, 60);
+    cursor: pointer;
 }
-
 button span {
     position: absolute;
     width: 25%;
@@ -49,71 +42,63 @@ button span {
     transition-delay: calc((var(--n) - 1) * 0.1s);
     z-index: -1;
 }
+button:hover {color: black;}
+button:hover span {transform: translateY(0) scale(2);}
+button span:nth-child(1) {--n: 1;}
+button span:nth-child(2) {--n: 2;}
+button span:nth-child(3) {--n: 3;}
+button span:nth-child(4) {--n: 4;}
 
-button:hover {
-color: black;
+/*SPLASH SCREEN*/
+#splashScreen img{
+    width: 100%;
 }
-
-button:hover span {
-    transform: translateY(0) scale(2);
-}
-
-button span:nth-child(1) {
-    --n: 1;
-}
-
-button span:nth-child(2) {
-    --n: 2;
-}
-
-button span:nth-child(3) {
-    --n: 3;
-}
-
-button span:nth-child(4) {
-    --n: 4;
-}
-
 #splashScreen button {
     position: absolute;
     z-index: 100;
     bottom: 50px;
 }
-
 #start {
     left: 50%;
 }
-
 #howTo {
     left: 10%;
 }
 
-#howToScreen p{
-    font-family: sans-serif;
-    margin-top: 50px;
-    font-size: 30px;
-    text-align: center;
+/*HOW TO PLAY SCREEN*/
+#howToScreen{
+    background-image: url(/img/How\ to\ screen.png);
+    background-size: 100%;
 }
-
-#howToScreen button{
-    position: absolute;
-    z-index: 100;
-    height: 17%; 
-    width: 30%;
-    left: 33%;
-}
-
 h1 {
     font-size: 200px;
-    text-align: center;
-    margin-top:10%;
+    text-align: right;
+    padding: 5%;
     color:  rgb(182, 60, 60);
 }
-
-#gameScreen img {
-    width: 90%;
+#howToScreen p{
+    font-family: sans-serif;
+    color: white;
+    padding: 0 5% 5%;
+    font-size: 30px;
+    text-align: right;
+    height: 100%;
+}
+#howToScreen button{
+    position: relative;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    height: 17%; 
+    width: 30%;
+    left: 65%;
 }
 
+/*GAME SCREEN*/
+#gameScreen img {
+    width: 90%;
+    height: 100%;
+}
 #timer {
     position: absolute;
     font-size: 6rem;
@@ -122,11 +107,50 @@ h1 {
     left: 24%;
     top: 12%;
 }
+#gameScreen button {
+    width: 5%;
+    height: 10%;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+}
+#gameScreen button:hover {
+    transition: none;
+    transition-delay: 0ms;
+}
+#gameScreen button:hover:before {
+    content:"Assign!";
+    color: white;
+}
+#table1 {
+    position: absolute;
+    top: 75%;
+    z-index: 1000;
+    left: 67%;
+}
+#table2 {
+    position: absolute;
+    top: 63%;
+    z-index: 1000;
+    left: 44%;
+}
+#table3 {
+    position: absolute;
+    top: 54%;
+    z-index: 1000;
+    left: 31%;
+}
+#table4 {
+    position: absolute;
+    top: 48%;
+    z-index: 1000;
+    left: 18%;
+}
 
+/*WIN SCREEN*/
 #winScreen img {
     width: 108rem;
 }
-
 .winBtn{
     position: absolute;
     top: 2rem;
@@ -136,10 +160,10 @@ h1 {
     margin-top: 30px;
 }
 
+/*LOSE SCREEN*/
 #loseScreen img {
     width: 108rem;
 }
-
 .loseBtn {
     position: absolute;
     top: 79%;

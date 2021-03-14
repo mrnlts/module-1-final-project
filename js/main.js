@@ -58,34 +58,34 @@ function startGameClick() {
     destroySplashScreen();
     destroyHowTo();
     buildGameScreen();
-    let start= 10;
-    function countdown() {
-        function getMinutes() {return "0"+Math.floor(start/60);}
-        let rest = Math.round(start%60);
-        function getSeconds() {
-            if (rest === 0){
-                return "00";
-            } else {
-                if(rest < 10) {
-                    return "0" + rest;
-                } else {
-                    return rest;
-                }
-            }
-        }
-        return timer.innerText = `${getMinutes()}:${getSeconds()}`;
-    }
-    function substract(){
-        if (start >= 0) {
-            countdown();
-            start--;
-        } else {
-            clearInterval(subsInt);
-            buildWinScreen();
-            return;
-        }
-    }
-    let subsInt = setInterval(()=> substract(), 1000);        
+//     let start= 30;
+//     function countdown() {
+//         function getMinutes() {return "0"+Math.floor(start/60);}
+//         let rest = Math.round(start%60);
+//         function getSeconds() {
+//             if (rest === 0){
+//                 return "00";
+//             } else {
+//                 if(rest < 10) {
+//                     return "0" + rest;
+//                 } else {
+//                     return rest;
+//                 }
+//             }
+//         }
+//         return timer.innerText = `${getMinutes()}:${getSeconds()}`;
+//     }
+//     function substract(){
+//         if (start >= 0) {
+//             countdown();
+//             start--;
+//         } else {
+//             clearInterval(subsInt);
+//             buildLoseScreen();
+//             return;
+//         }
+//     }
+//     let subsInt = setInterval(()=> substract(), 1000);        
 }
 function howToClick() {
     destroySplashScreen();

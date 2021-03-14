@@ -25,13 +25,15 @@ function destroyLoseScreen(){destroyDom(loseScreen);}
 
 //BUILDER FUNCTIONS
 function buildSplashScreen() {
-    splashScreen.innerHTML = '<img src="img/Splash-screen.png" alt="initial-screen"><button id="start">START</button><button id="howTo">HOW TO PLAY</button>';
+    splashScreen.innerHTML = '<img src="img/Splash-screen.png" alt="initial-screen"><button id="start">START<span></span><span></span><span></span><span></span></button><button id="howTo">HOW TO PLAY<span></span><span></span><span></span><span></span></button>';
     splashScreen.classList.add("show");
+    startBtn.addEventListener('click', () => startGameClick());
+    howToBtn.addEventListener('click', () => howToClick());
 }
-
 function buildHowToScreen() {
     howToScreen.classList.remove("hide");
-    howToScreen.classList.add("show");}
+    howToScreen.classList.add("show");
+}
 function buildGameScreen() {
     gameScreen.classList.remove("hide");
     gameScreen.classList.add("show");
@@ -56,7 +58,8 @@ function buildLoseScreen() {
 function startGameClick() {
     destroySplashScreen();
     buildGameScreen();
-    setTimeout(() => buildWinScreen(), 300000);
+    setTimeout(() => buildWinScreen(), 3000);
+    console.log("Start");
 }
 function howToClick() {
     destroySplashScreen();
@@ -65,7 +68,7 @@ function howToClick() {
 function startGameFromHowTo() {
     destroyHowTo();
     buildGameScreen();
-    setTimeout(() => buildWinScreen(), 300000);
+    setTimeout(() => buildLoseScreen(), 3000);
 }
 function playAgainFromVictory(){
     destroyWinScreen();

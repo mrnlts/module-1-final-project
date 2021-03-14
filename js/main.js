@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM is loaded');
 });
 
-//PATHS TO HTML ELEMENTS
+/*PATHS TO HTML ELEMENTS-----------------------------------------------------------------*/
 const splashScreen = document.getElementById("splashScreen");
 const startBtn = document.getElementById("start");
 const playBtn = document.querySelector("#howToScreen button");
@@ -16,7 +16,7 @@ const loseScreen = document.getElementById("loseScreen");
 const loseBtn = document.querySelector("#loseScreen button");
 
 
-//DESTROYER FUNCTIONS
+/*DESTROYER FUNCTIONS--------------------------------------------------------------------*/
 function destroyDom(target) {target.innerHTML = '';}
 function destroySplashScreen() {destroyDom(splashScreen);}
 function destroyHowTo() {destroyDom(howToScreen);}
@@ -24,7 +24,7 @@ function destroyGame() {destroyDom(gameScreen);}
 function destroyWinScreen(){destroyDom(winScreen);}
 function destroyLoseScreen(){destroyDom(loseScreen);}
 
-//BUILDER FUNCTIONS
+/*BUILDER FUNCTIONS----------------------------------------------------------------------*/
 function buildSplashScreen() {
     splashScreen.innerHTML = '<img src="img/Splash-screen.png" alt="initial-screen"><button id="start">START<span></span><span></span><span></span><span></span></button><button id="howTo">HOW TO PLAY<span></span><span></span><span></span><span></span></button>';
     splashScreen.classList.add("show");
@@ -50,42 +50,44 @@ function buildLoseScreen() {
     loseScreen.classList.add("show");
 }
 
-//TIMER
+/*TIMER----------------------------------------------------------------------------------*/
+function countdown () {
+    let start= 300;
+    function countdown() {
+        function getMinutes() {return "0"+Math.floor(start/60);}
+        let rest = Math.round(start%60);
+        function getSeconds() {
+            if (rest === 0){
+                return "00";
+            } else {
+                if(rest < 10) {
+                    return "0" + rest;
+                } else {
+                    return rest;
+                }
+            }
+        }
+        return timer.innerText = `${getMinutes()}:${getSeconds()}`;
+    }
+    function substract(){
+        if (start >= 0) {
+            countdown();
+            start--;
+        } else {
+            clearInterval(subsInt);
+            buildLoseScreen();
+            return;
+        }
+    }
+    let subsInt = setInterval(()=> substract(), 1000);        
+}
 
-
-//BUTTON-RELATED FUNCTIONS  
+/*BUTTON-RELATED FUNCTIONS---------------------------------------------------------------*/
 function startGameClick() {
     destroySplashScreen();
     destroyHowTo();
     buildGameScreen();
-//     let start= 30;
-//     function countdown() {
-//         function getMinutes() {return "0"+Math.floor(start/60);}
-//         let rest = Math.round(start%60);
-//         function getSeconds() {
-//             if (rest === 0){
-//                 return "00";
-//             } else {
-//                 if(rest < 10) {
-//                     return "0" + rest;
-//                 } else {
-//                     return rest;
-//                 }
-//             }
-//         }
-//         return timer.innerText = `${getMinutes()}:${getSeconds()}`;
-//     }
-//     function substract(){
-//         if (start >= 0) {
-//             countdown();
-//             start--;
-//         } else {
-//             clearInterval(subsInt);
-//             buildLoseScreen();
-//             return;
-//         }
-//     }
-//     let subsInt = setInterval(()=> substract(), 1000);        
+    countdown();
 }
 function howToClick() {
     destroySplashScreen();
@@ -103,7 +105,7 @@ function playAgainFromFailure(){
     buildSplashScreen();
 }
 
-//EVENT LISTENERS
+/*EVENT LISTENERS------------------------------------------------------------------------*/
 startBtn.addEventListener('click', () => startGameClick());
 howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());

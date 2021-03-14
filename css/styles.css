@@ -1,4 +1,4 @@
-/*COMMON STYLES*/
+/*COMMON STYLES--------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 *{
     box-sizing: border-box;
@@ -49,7 +49,8 @@ button span:nth-child(2) {--n: 2;}
 button span:nth-child(3) {--n: 3;}
 button span:nth-child(4) {--n: 4;}
 
-/*SPLASH SCREEN*/
+
+/*SPLASH SCREEN--------------------------------------------------------------------------*/
 #splashScreen img{
     width: 100%;
 }
@@ -65,7 +66,7 @@ button span:nth-child(4) {--n: 4;}
     left: 10%;
 }
 
-/*HOW TO PLAY SCREEN*/
+/*HOW-TO SCREEN--------------------------------------------------------------------------*/
 #howToScreen{
     background-image: url(/img/How\ to\ screen.png);
     background-size: 100%;
@@ -94,7 +95,8 @@ h1 {
     left: 65%;
 }
 
-/*GAME SCREEN*/
+
+/*GAME SCREEN----------------------------------------------------------------------------*/
 #gameScreen img {
     width: 90%;
     height: 100%;
@@ -147,7 +149,8 @@ h1 {
     left: 18%;
 }
 
-/*WIN SCREEN*/
+
+/*WIN SCREEN------------------------------------------------------------------------------*/
 #winScreen img {
     width: 108rem;
 }
@@ -160,7 +163,8 @@ h1 {
     margin-top: 30px;
 }
 
-/*LOSE SCREEN*/
+
+/*LOSE SCREEN----------------------------------------------------------------------------*/
 #loseScreen img {
     width: 108rem;
 }

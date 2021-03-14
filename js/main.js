@@ -8,8 +8,9 @@ const startBtn = document.getElementById("start");
 const playBtn = document.querySelector("#howToScreen button");
 const howToBtn = document.getElementById("howTo");
 const howToScreen = document.getElementById("howToScreen");
-const timer = document.getElementById("timer");
 const gameScreen = document.getElementById("gameScreen");
+const queue = document.getElementById("queue");
+const timer = document.getElementById("timer");
 const winScreen = document.getElementById("winScreen");
 const winBtn = document.querySelector("#winScreen button");
 const loseScreen = document.getElementById("loseScreen");
@@ -17,12 +18,12 @@ const loseBtn = document.querySelector("#loseScreen button");
 
 
 /*DESTROYER FUNCTIONS--------------------------------------------------------------------*/
-function destroyDom(target) {target.innerHTML = '';}
-function destroySplashScreen() {destroyDom(splashScreen);}
-function destroyHowTo() {destroyDom(howToScreen);}
-function destroyGame() {destroyDom(gameScreen);}
-function destroyWinScreen(){destroyDom(winScreen);}
-function destroyLoseScreen(){destroyDom(loseScreen);}
+function destroyDom(target) { target.innerHTML = ''; }
+function destroySplashScreen() { destroyDom(splashScreen); }
+function destroyHowTo() { destroyDom(howToScreen); }
+function destroyGame() { destroyDom(gameScreen); }
+function destroyWinScreen() { destroyDom(winScreen); }
+function destroyLoseScreen() { destroyDom(loseScreen); }
 
 /*BUILDER FUNCTIONS----------------------------------------------------------------------*/
 function buildSplashScreen() {
@@ -51,16 +52,16 @@ function buildLoseScreen() {
 }
 
 /*TIMER----------------------------------------------------------------------------------*/
-function countdown () {
-    let start= 300;
+function countdown() {
+    let start = 300;
     function countdown() {
-        function getMinutes() {return "0"+Math.floor(start/60);}
-        let rest = Math.round(start%60);
+        function getMinutes() { return "0" + Math.floor(start / 60); }
+        let rest = Math.round(start % 60);
         function getSeconds() {
-            if (rest === 0){
+            if (rest === 0) {
                 return "00";
             } else {
-                if(rest < 10) {
+                if (rest < 10) {
                     return "0" + rest;
                 } else {
                     return rest;
@@ -69,17 +70,18 @@ function countdown () {
         }
         return timer.innerText = `${getMinutes()}:${getSeconds()}`;
     }
-    function substract(){
+    function substract() {
         if (start >= 0) {
             countdown();
             start--;
         } else {
             clearInterval(subsInt);
+            // clearInterval(customerArrival);
             buildLoseScreen();
             return;
         }
     }
-    let subsInt = setInterval(()=> substract(), 1000);        
+    let subsInt = setInterval(() => substract(), 1000);
 }
 
 /*BUTTON-RELATED FUNCTIONS---------------------------------------------------------------*/
@@ -88,6 +90,7 @@ function startGameClick() {
     destroyHowTo();
     buildGameScreen();
     countdown();
+    // customerArrives();
 }
 function howToClick() {
     destroySplashScreen();
@@ -96,11 +99,11 @@ function howToClick() {
 function startGameFromHowTo() {
     startGameClick();
 }
-function playAgainFromVictory(){
+function playAgainFromVictory() {
     destroyWinScreen();
     buildSplashScreen();
 }
-function playAgainFromFailure(){
+function playAgainFromFailure() {
     destroyLoseScreen();
     buildSplashScreen();
 }
@@ -111,4 +114,11 @@ howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());
 loseBtn.addEventListener('click', () => playAgainFromFailure());
+
+
+/*COSTUMERS------------------------------------------------------------------------------*/
+// function customerArrives() {
+//     let customerArrival = setInterval(() => {queue.innerText = '<img src="/img/Customer0.png" alt="customer" id="customer">';}, 5000);
+// }
+
 

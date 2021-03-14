@@ -9,40 +9,42 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div id="splashScreen">
+    <div id="splashScreen"> <!--SPLASH SCREEN-->
         <img src="img/Splash-screen.png" alt="initial screen">
         <button id="start">START<span></span><span></span><span></span><span></span></button>
         <button id="howTo">HOW TO PLAY<span></span><span></span><span></span><span></span></button>
     </div>
-    <div id="howToScreen" class="hide">
-        <!-- <img src="/img/How to screen.png" alt="how to play screen"> -->
+    
+    <div id="howToScreen" class="hide"> <!--HOW TO PLAY-->
         <h1>How to play</h1>
-        <p>The purpose of the game is to successfully finish a lunch session at your restaurant. </br>
-            You will play as the <i>mâitre</i>, the waiter and <i>le cashier</i>. Keep the costumers </br>
-            happy so that they leave good reviews of our restaurant on TripAdvisor! </br>
-        </br>
-            Assign tables to each costumer by clicking on those that are empty. </br>
-            Stay alert so that costumers that are finished do have to wait to pay. </br>
-            Work fast so that the queue does not accumulate!
-        </p>
+        <p>The purpose of the game is to successfully finish a lunch session at your restaurant. </br> You will play as the <i>mâitre</i>, the waiter and <i>le cashier</i>. Keep the costumers </br> happy so that they leave good reviews of our restaurant on TripAdvisor! </br>
+        </br>Assign tables to each costumer by clicking on those that are empty. </br> Stay alert so that costumers that are finished do have to wait to pay. </br>  Work fast so that the queue does not accumulate! </p>
         <button>START<span></span><span></span><span></span><span></span></button>
     </div>
-    <div id="gameScreen" class="hide">
+    
+    <div id="gameScreen" class="hide"> <!--GAME-->
         <img src="/img/Game screen.png" alt="restaurant picture">
         <div id="timer"></div>
-        <button id="table1">1</button>
-        <button id="table2">2</button>
-        <button id="table3">3</button>
-        <button id="table4">4</button>
+        <div> <!--Tables-->
+            <button id="table1">1</button>
+            <button id="table2">2</button>
+            <button id="table3">3</button>
+            <button id="table4">4</button>
+        </div>
+        <div id="queue"> <!--Queue-->
+        </div>
     </div>
-    <div id="winScreen" class="hide">
+    
+    <div id="winScreen" class="hide"> <!--WIN-->
         <button class="winBtn">PLAY AGAIN?<span></span><span></span><span></span><span></span></button>
         <img src="/img/winScreen.gif" alt="congrats!">
     </div>
-    <div id="loseScreen" class="hide">
+    
+    <div id="loseScreen" class="hide"> <!--LOSE-->
         <img src="/img/Lose screen.gif" alt="epic fail">
         <button class="loseBtn">PLAY AGAIN?<span></span><span></span><span></span><span></span></button>
     </div>
+
     <script src="/js/game.js"></script>
     <script src="/js/main.js"></script>
 </body>

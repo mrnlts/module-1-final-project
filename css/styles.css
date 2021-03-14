@@ -89,6 +89,7 @@ button span:nth-child(4) {
 }
 
 #howToScreen p{
+    font-family: sans-serif;
     margin-top: 50px;
     font-size: 30px;
     text-align: center;
@@ -105,10 +106,21 @@ button span:nth-child(4) {
 h1 {
     font-size: 200px;
     text-align: center;
+    margin-top:10%;
+    color:  rgb(182, 60, 60);
 }
 
 #gameScreen img {
     width: 90%;
+}
+
+#timer {
+    position: absolute;
+    font-size: 6rem;
+    z-index: 100;
+    color: white;
+    left: 24%;
+    top: 12%;
 }
 
 #winScreen img {
@@ -119,7 +131,7 @@ h1 {
     position: absolute;
     top: 2rem;
     height: 17%; 
-    width: auto%;
+    width: auto;
     left: 40%;
     margin-top: 30px;
 }
@@ -132,7 +144,7 @@ h1 {
     position: absolute;
     top: 79%;
     height: 17%; 
-    width: auto%;
+    width: auto;
     left: 40%;
     margin-top: 30px;
 }

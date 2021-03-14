@@ -5,14 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
 //PATHS TO HTML ELEMENTS
 const splashScreen = document.getElementById("splashScreen");
 const startBtn = document.getElementById("start");
-const howToBtn = document.getElementById("howTo");
 const playBtn = document.querySelector("#howToScreen button");
-const winBtn = document.querySelector("#winScreen button");
-const loseBtn = document.querySelector("#loseScreen button");
+const howToBtn = document.getElementById("howTo");
 const howToScreen = document.getElementById("howToScreen");
+const timer = document.getElementById("timer");
 const gameScreen = document.getElementById("gameScreen");
 const winScreen = document.getElementById("winScreen");
+const winBtn = document.querySelector("#winScreen button");
 const loseScreen = document.getElementById("loseScreen");
+const loseBtn = document.querySelector("#loseScreen button");
 
 
 //DESTROYER FUNCTIONS
@@ -37,11 +38,6 @@ function buildHowToScreen() {
 function buildGameScreen() {
     gameScreen.classList.remove("hide");
     gameScreen.classList.add("show");
-    // let start = 300;
-    // let gameIntervalId = setInterval(() => {start--;}, 1000);
-    // function getMinutes() {return Math.floor(start/60);};
-    // let 
-    // getMinutes();
 }
 function buildWinScreen() {
     destroyGame();
@@ -54,21 +50,49 @@ function buildLoseScreen() {
     loseScreen.classList.add("show");
 }
 
+//TIMER
+
+
 //BUTTON-RELATED FUNCTIONS  
 function startGameClick() {
     destroySplashScreen();
+    destroyHowTo();
     buildGameScreen();
-    setTimeout(() => buildWinScreen(), 3000);
-    console.log("Start");
+    let start= 10;
+    function countdown() {
+        function getMinutes() {return "0"+Math.floor(start/60);}
+        let rest = Math.round(start%60);
+        function getSeconds() {
+            if (rest === 0){
+                return "00";
+            } else {
+                if(rest < 10) {
+                    return "0" + rest;
+                } else {
+                    return rest;
+                }
+            }
+        }
+        return timer.innerText = `${getMinutes()}:${getSeconds()}`;
+    }
+    function substract(){
+        if (start >= 0) {
+            countdown();
+            start--;
+        } else {
+            clearInterval(subsInt);
+            buildWinScreen();
+            return;
+        }
+    }
+    let subsInt = setInterval(()=> substract(), 1000);        
 }
 function howToClick() {
     destroySplashScreen();
     buildHowToScreen();
 }
 function startGameFromHowTo() {
-    destroyHowTo();
-    buildGameScreen();
-    setTimeout(() => buildLoseScreen(), 3000);
+    startGameClick();
 }
 function playAgainFromVictory(){
     destroyWinScreen();
@@ -85,3 +109,4 @@ howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());
 loseBtn.addEventListener('click', () => playAgainFromFailure());
+

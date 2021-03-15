@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM is loaded');
 });
-const game = new Game;
+const game = new Game();
 
 /*PATHS TO HTML ELEMENTS-----------------------------------------------------------------*/
 const splashScreen = document.getElementById("splashScreen");
@@ -22,10 +22,10 @@ const spot7 = document.getElementById("spot7");
 const spot8 = document.getElementById("spot8");
 const timer = document.getElementById("timer");
 const tables = document.getElementById("tables");
-const table1 = document.getElementById("table1");
-const table2 = document.getElementById("table2");
-const table3 = document.getElementById("table3");
-const table4 = document.getElementById("table4");
+game.table1 = document.getElementById("table1");
+game.table2 = document.getElementById("table2");
+game.table3 = document.getElementById("table3");
+game.table4 = document.getElementById("table4");
 const winScreen = document.getElementById("winScreen");
 const winBtn = document.querySelector("#winScreen button");
 const loseScreen = document.getElementById("loseScreen");
@@ -39,6 +39,7 @@ function destroyHowTo() { destroyDom(howToScreen); }
 function destroyGame() { destroyDom(gameScreen); }
 function destroyWinScreen() { destroyDom(winScreen); }
 function destroyLoseScreen() { destroyDom(loseScreen); }
+
 
 /*BUILDER FUNCTIONS----------------------------------------------------------------------*/
 function buildSplashScreen() {
@@ -70,38 +71,6 @@ function buildLoseScreen() {
     loseScreen.classList.add("show");
 }
 
-/*TIMER----------------------------------------------------------------------------------*/
-function countdown() {
-    let start = 300;
-    function countdown() {
-        function getMinutes() { return "0" + Math.floor(start / 60); }
-        let rest = Math.round(start % 60);
-        function getSeconds() {
-            if (rest === 0) {
-                return "00";
-            } else {
-                if (rest < 10) {
-                    return "0" + rest;
-                } else {
-                    return rest;
-                }
-            }
-        }
-        return timer.innerText = `${getMinutes()}:${getSeconds()}`;
-    }
-    function substract() {
-        if (start >= 0) {
-            countdown();
-            start--;
-        } else {
-            clearInterval(subsInt);
-            buildLoseScreen();
-            return;
-        }
-    }
-    let subsInt = setInterval(() => substract(), 1000);
-}
-
 
 /*BUTTON-RELATED FUNCTIONS---------------------------------------------------------------*/
 function howToClick() {
@@ -120,26 +89,10 @@ function playAgainFromFailure() {
     buildSplashScreen();
 }
 
+
 /*EVENT LISTENERS------------------------------------------------------------------------*/
 startBtn.addEventListener('click', () => game.startGameClick());
 howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());
 loseBtn.addEventListener('click', () => playAgainFromFailure());
-const table1Btn = table1.addEventListener('click', ()=> game.assignTable(table1));
-const table2Btn = table2.addEventListener('click', ()=> game.assignTable(table2));
-const table3Btn = table3.addEventListener('click', ()=> game.assignTable(table3));
-const table4Btn = table4.addEventListener('click', ()=> game.assignTable(table4));
-
-
-/*TIME OUTS------------------------------------------------------------------------------*/
-        setTimeout(() => game.customerArrives("spot1"), 6000);
-        setTimeout(() => game.customerArrives("spot2"), 11000);
-        setTimeout(() => game.customerArrives("spot3"), 16000);
-        setTimeout(() => game.customerArrives("spot4"), 21000);
-        setTimeout(() => game.customerArrives("spot5"), 26000);
-        setTimeout(() => game.customerArrives("spot6"), 31000);
-        setTimeout(() => game.customerArrives("spot7"), 36000);
-        setTimeout(() => game.customerArrives("spot8"), 41000);
-
-

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Madness</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/game.css">
 </head>
 <body>
     <div id="splashScreen"> <!--SPLASH SCREEN-->
@@ -22,16 +23,24 @@
         <button>START<span></span><span></span><span></span><span></span></button>
     </div>
     
-    <div id="gameScreen" class="hide"> <!--GAME-->
-        <img src="/img/Game screen.png" alt="restaurant picture">
-        <div id="timer"></div>
-        <div> <!--Tables-->
+    <div id="gameScreen"> <!--GAME-->
+        <img id="gameScreenImg" class="hide" src="/img/Game screen.png" alt="restaurant picture">
+        <div id="timer" class="hide"></div>
+        <div id="tables" class="hide"> <!--Tables-->
             <button id="table1">1</button>
             <button id="table2">2</button>
             <button id="table3">3</button>
             <button id="table4">4</button>
         </div>
         <div id="queue"> <!--Queue-->
+            <div id="spot1" class="hide"> </div> 
+            <div id="spot2" class="hide"> </div> 
+            <div id="spot3" class="hide"> </div> 
+            <div id="spot4" class="hide"> </div> 
+            <div id="spot5" class="hide"> </div> 
+            <div id="spot6" class="hide"> </div> 
+            <div id="spot7" class="hide"> </div> 
+            <div id="spot8" class="hide"> </div>
         </div>
     </div>
     

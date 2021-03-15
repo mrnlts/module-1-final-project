@@ -9,8 +9,10 @@ const playBtn = document.querySelector("#howToScreen button");
 const howToBtn = document.getElementById("howTo");
 const howToScreen = document.getElementById("howToScreen");
 const gameScreen = document.getElementById("gameScreen");
+const gameScreenBackg = document.getElementById("gameScreenImg");
 const queue = document.getElementById("queue");
 const timer = document.getElementById("timer");
+const tables = document.getElementById("tables");
 const winScreen = document.getElementById("winScreen");
 const winBtn = document.querySelector("#winScreen button");
 const loseScreen = document.getElementById("loseScreen");
@@ -37,8 +39,12 @@ function buildHowToScreen() {
     howToScreen.classList.add("show");
 }
 function buildGameScreen() {
-    gameScreen.classList.remove("hide");
-    gameScreen.classList.add("show");
+    gameScreenBackg.classList.remove("hide");
+    gameScreenBackg.classList.add("show");
+    timer.classList.remove("hide");
+    timer.classList.add("show");
+    tables.classList.remove("hide");
+    tables.classList.add("show");
 }
 function buildWinScreen() {
     destroyGame();
@@ -84,13 +90,21 @@ function countdown() {
     let subsInt = setInterval(() => substract(), 1000);
 }
 
+
 /*BUTTON-RELATED FUNCTIONS---------------------------------------------------------------*/
 function startGameClick() {
     destroySplashScreen();
     destroyHowTo();
     buildGameScreen();
     countdown();
-    // customerArrives();
+    setTimeout(() => game.customerArrives("spot1"), 6000);
+    setTimeout(() => game.customerArrives("spot2"), 11000);
+    setTimeout(() => game.customerArrives("spot3"), 16000);
+    setTimeout(() => game.customerArrives("spot4"), 21000);
+    setTimeout(() => game.customerArrives("spot5"), 26000);
+    setTimeout(() => game.customerArrives("spot6"), 31000);
+    setTimeout(() => game.customerArrives("spot7"), 36000);
+    setTimeout(() => game.customerArrives("spot8"), 41000);
 }
 function howToClick() {
     destroySplashScreen();
@@ -114,11 +128,5 @@ howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());
 loseBtn.addEventListener('click', () => playAgainFromFailure());
-
-
-/*COSTUMERS------------------------------------------------------------------------------*/
-// function customerArrives() {
-//     let customerArrival = setInterval(() => {queue.innerText = '<img src="/img/Customer0.png" alt="customer" id="customer">';}, 5000);
-// }
 
 

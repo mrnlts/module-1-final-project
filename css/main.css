@@ -1,5 +1,6 @@
 /*COMMON STYLES--------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -12,14 +13,12 @@
 button {
     height: 17%;
     width: 30%;
-    font-size: 50px;
     --c: goldenrod;
-    color: var(--c);
     font-size: 50px;
+    color: var(--c);
     border: 0.3em solid var(--c);
     border-radius: 0.5em;
     font-weight: bold;
-    font-family: sans-serif;
     letter-spacing: 0.1em;
     text-align: center;
     line-height: 3em;
@@ -97,56 +96,9 @@ h1 {
 
 
 /*GAME SCREEN----------------------------------------------------------------------------*/
-#gameScreen img {
+#gameScreenImg {
     width: 90%;
     height: 100%;
-}
-#timer {
-    position: absolute;
-    font-size: 6rem;
-    z-index: 100;
-    color: white;
-    left: 24%;
-    top: 12%;
-}
-#gameScreen button {
-    width: 5%;
-    height: 10%;
-    font-size: 18px;
-    background-color: black;
-    color: white;
-}
-#gameScreen button:hover {
-    transition: none;
-    transition-delay: 0ms;
-}
-#gameScreen button:hover:before {
-    content:"Assign!";
-    color: white;
-}
-#table1 {
-    position: absolute;
-    top: 75%;
-    z-index: 1000;
-    left: 67%;
-}
-#table2 {
-    position: absolute;
-    top: 63%;
-    z-index: 1000;
-    left: 44%;
-}
-#table3 {
-    position: absolute;
-    top: 54%;
-    z-index: 1000;
-    left: 31%;
-}
-#table4 {
-    position: absolute;
-    top: 48%;
-    z-index: 1000;
-    left: 18%;
 }
 
 

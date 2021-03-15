@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/*TIMER----------------------------------------------------------------------------*/
+#timer {
+    position: absolute;
+    font-size: 5.2rem;
+    font-family: 'Dancing Script';
+    z-index: 100;
+    color: white;
+    left: 24.2%;
+    top: 11.5%;
+}
+
+
+/*QUEUE----------------------------------------------------------------------------*/
+#queue > div{
+    background-repeat: no-repeat;
+    width: 7%;
+    height: 17%;
+    position: absolute;
+}
+#spot1 {
+    background-image: url(/img/Customer0.png);
+    background-size: 115%;
+    top: 10%;
+    left: 1.5%;
+}
+#spot2 {
+    background-image: url(/img/Customer1.png);
+    background-size: 100%;
+    top: 11%;
+    left: 10.3%;
+}
+#spot3 {
+    background-image: url(/img/Customer3.png);
+    background-size: 100%;
+    top: 33%;
+    left: 2%;
+}
+#spot4 {
+    background-image: url(/img/Customer4.png);
+    background-size: 100%;
+    top: 33%;
+    left: 10%;
+}
+#spot5 {
+    background-image: url(/img/Customer1.png);
+    background-size: 100%;
+    top: 56%;
+    left: 1.5%;
+}
+#spot6 {
+    background-image: url(/img/Customer0.png);
+    background-size: 115%;
+    top: 55%;
+    left: 10.5%;
+}
+#spot7 {
+    background-image: url(/img/Customer4.png);
+    background-size: 100%;
+    top: 78%;
+    left: 1.5%;
+}
+#spot8 {
+    background-image: url(/img/Customer3.png);
+    background-size: 100%;
+    top: 78%;
+    left: 10.5%;
+}
+
+
+/*TABLES---------------------------------------------------------------------------*/
+#gameScreen button {
+    position: absolute;
+    width: 6%;
+    height: 11%;
+    font-family: 'Bebas Neue';
+    font-size: 31px;
+    background-color: white;
+    color: black;
+    border: black 5px solid;
+    border-radius: 40%;
+}
+#gameScreen button:hover:before {
+    color: black;
+    content:"Assign!";
+}
+#table1 {
+    top: 74%;
+    left: 66%;
+}
+#table2 {
+    top: 61%;
+    left: 42.5%;
+}
+#table3 {
+    top: 52%;
+    left: 30%;
+}
+#table4 {
+    top: 46%;
+    left: 17%;
+}
+
+
+/*CUSTOMERS---------------------------------------------------------------------------*/
+#customer {
+    position: absolute;
+    top: 8%;
+    left: 0.6%;
+    width: 10%;
+    height: 9,5%;
+}

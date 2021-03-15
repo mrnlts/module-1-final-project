@@ -67,7 +67,7 @@ button span:nth-child(4) {--n: 4;}
 
 /*HOW-TO SCREEN--------------------------------------------------------------------------*/
 #howToScreen{
-    background-image: url(/img/How\ to\ screen.png);
+    background-image: url(img/How\ to\ screen.png);
     background-size: 100%;
 }
 h1 {

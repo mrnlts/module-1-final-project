@@ -94,7 +94,6 @@ function countdown() {
             start--;
         } else {
             clearInterval(subsInt);
-            // clearInterval(customerArrival);
             buildLoseScreen();
             return;
         }

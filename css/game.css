@@ -20,50 +20,34 @@
     position: absolute;
 }
 #spot1 {
-    background-image: url(/img/Customer0.png);
-    background-size: 115%;
     top: 10%;
     left: 1.5%;
 }
 #spot2 {
-    background-image: url(/img/Customer1.png);
-    background-size: 100%;
     top: 11%;
     left: 10.3%;
 }
 #spot3 {
-    background-image: url(/img/Customer3.png);
-    background-size: 100%;
     top: 33%;
     left: 2%;
 }
 #spot4 {
-    background-image: url(/img/Customer4.png);
-    background-size: 100%;
     top: 33%;
     left: 10%;
 }
 #spot5 {
-    background-image: url(/img/Customer1.png);
-    background-size: 100%;
     top: 56%;
     left: 1.5%;
 }
 #spot6 {
-    background-image: url(/img/Customer0.png);
-    background-size: 115%;
     top: 55%;
     left: 10.5%;
 }
 #spot7 {
-    background-image: url(/img/Customer4.png);
-    background-size: 100%;
     top: 78%;
     left: 1.5%;
 }
 #spot8 {
-    background-image: url(/img/Customer3.png);
-    background-size: 100%;
     top: 78%;
     left: 10.5%;
 }
@@ -103,6 +87,7 @@
 }
 
 
+
 /*CUSTOMERS---------------------------------------------------------------------------*/
 #customer {
     position: absolute;
@@ -110,4 +95,20 @@
     left: 0.6%;
     width: 10%;
     height: 9,5%;
+}
+#table1 > img {
+    position: fixed;
+    top: 63%;
+}
+#table2 > img {
+    position: fixed;
+    top: 55%;
+}
+#table3  > img{
+    position: fixed;
+    top: 47%;
+}
+#table4  > img {
+    position: fixed;
+    top: 40%;
 }

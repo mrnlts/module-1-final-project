@@ -1,5 +1,11 @@
 /*COSTUMERS------------------------------------------------------------------------------*/
 class Game {
+    startGameClick() {
+        destroySplashScreen();
+        destroyHowTo();
+        buildGameScreen();
+        countdown();
+    }
     customerArrives(spot) {
         let queueElem = document.getElementById(spot);
         queueElem.classList.remove("hide");
@@ -19,8 +25,4 @@ class Game {
     }
 }
 
-const game = new Game;
-const table1Btn = table1.addEventListener('click', ()=> game.assignTable(table1));
-const table2Btn = table2.addEventListener('click', ()=> game.assignTable(table2));
-const table3Btn = table3.addEventListener('click', ()=> game.assignTable(table3));
-const table4Btn = table4.addEventListener('click', ()=> game.assignTable(table4));
+

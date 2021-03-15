@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM is loaded');
 });
+const game = new Game;
 
 /*PATHS TO HTML ELEMENTS-----------------------------------------------------------------*/
 const splashScreen = document.getElementById("splashScreen");
@@ -103,20 +104,6 @@ function countdown() {
 
 
 /*BUTTON-RELATED FUNCTIONS---------------------------------------------------------------*/
-function startGameClick() {
-    destroySplashScreen();
-    destroyHowTo();
-    buildGameScreen();
-    countdown();
-    setTimeout(() => game.customerArrives("spot1"), 6000);
-    setTimeout(() => game.customerArrives("spot2"), 11000);
-    setTimeout(() => game.customerArrives("spot3"), 16000);
-    setTimeout(() => game.customerArrives("spot4"), 21000);
-    setTimeout(() => game.customerArrives("spot5"), 26000);
-    setTimeout(() => game.customerArrives("spot6"), 31000);
-    setTimeout(() => game.customerArrives("spot7"), 36000);
-    setTimeout(() => game.customerArrives("spot8"), 41000);
-}
 function howToClick() {
     destroySplashScreen();
     buildHowToScreen();
@@ -134,10 +121,25 @@ function playAgainFromFailure() {
 }
 
 /*EVENT LISTENERS------------------------------------------------------------------------*/
-startBtn.addEventListener('click', () => startGameClick());
+startBtn.addEventListener('click', () => game.startGameClick());
 howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());
 loseBtn.addEventListener('click', () => playAgainFromFailure());
+const table1Btn = table1.addEventListener('click', ()=> game.assignTable(table1));
+const table2Btn = table2.addEventListener('click', ()=> game.assignTable(table2));
+const table3Btn = table3.addEventListener('click', ()=> game.assignTable(table3));
+const table4Btn = table4.addEventListener('click', ()=> game.assignTable(table4));
+
+
+/*TIME OUTS------------------------------------------------------------------------------*/
+        setTimeout(() => game.customerArrives("spot1"), 6000);
+        setTimeout(() => game.customerArrives("spot2"), 11000);
+        setTimeout(() => game.customerArrives("spot3"), 16000);
+        setTimeout(() => game.customerArrives("spot4"), 21000);
+        setTimeout(() => game.customerArrives("spot5"), 26000);
+        setTimeout(() => game.customerArrives("spot6"), 31000);
+        setTimeout(() => game.customerArrives("spot7"), 36000);
+        setTimeout(() => game.customerArrives("spot8"), 41000);
 
 

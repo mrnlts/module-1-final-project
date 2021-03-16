@@ -5,9 +5,13 @@ class Game {
         this.table3 = table3;
         this.table4 = table4;
         this.table1Btn = this.table1.addEventListener('click', ()=> {this.assignTable(table1); this.lunchCountdown(table1);});
+        // this.table1CollectBtn = this.table1.addEventListener('click', ()=> {this.collectBill();});
         this.table2Btn = this.table2.addEventListener('click', ()=> {this.assignTable(table2); this.lunchCountdown(table2);});
+        // this.table2CollectBtn = this.table2.addEventListener('click', ()=> {this.collectBill();});
         this.table3Btn = this.table3.addEventListener('click', ()=> {this.assignTable(table3); this.lunchCountdown(table3);});
+        // this.table3CollectBtn = this.table3.addEventListener('click', ()=> {this.collectBill();});
         this.table4Btn = this.table4.addEventListener('click', ()=> {this.assignTable(table4); this.lunchCountdown(table4);});
+        // this.table4CollectBtn = this.table4.addEventListener('click', ()=> {this.collectBill();});
         //this.queueArr = [];
         //this.tableArr = [table1, table2, table3, table4];
         //this.customers = options.customers;
@@ -46,13 +50,15 @@ class Game {
     }
     lunchCountdown(tableNum){
         this.countdown(10, tableNum);
-        setTimeout(collectBtn, 11000);
-        function collectBtn() {
-            tableNum.innerHTML = '<p class="finished-eating">Collect!</p>';
+        setTimeout(buildCollectBtn, 11000);
+        function collectBill(){
+            let tag = tableNum.substring(2);
+            tableNum.innerHTML = tag;
         }
-    }
-    collectBill(){
-
+        function buildCollectBtn() {
+            tableNum.innerHTML = '<p class="finished-eating">Collect!</p>';
+            tableNum.addEventListener('click', () => collectBill());
+        }
     }
     patienceCountdown(){
 

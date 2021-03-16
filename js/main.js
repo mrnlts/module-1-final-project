@@ -30,6 +30,7 @@ const winScreen = document.getElementById("winScreen");
 const winBtn = document.querySelector("#winScreen button");
 const loseScreen = document.getElementById("loseScreen");
 const loseBtn = document.querySelector("#loseScreen button");
+const customersArr = ["img/Customer0.png","img/Customer1.png","img/Customer2.png","img/Customer3.png", "img/Customer4.png"];
 
 
 /*DESTROYER FUNCTIONS--------------------------------------------------------------------*/
@@ -45,7 +46,7 @@ function destroyLoseScreen() { destroyDom(loseScreen); }
 function buildSplashScreen() {
     splashScreen.innerHTML = '<img src="img/Splash-screen.png" alt="initial-screen"><button id="start">START<span></span><span></span><span></span><span></span></button><button id="howTo">HOW TO PLAY<span></span><span></span><span></span><span></span></button>';
     splashScreen.classList.add("show");
-    startBtn.addEventListener('click', () => startGameClick());
+    startBtn.addEventListener('click', () => start());
     howToBtn.addEventListener('click', () => howToClick());
 }
 function buildHowToScreen() {
@@ -79,7 +80,7 @@ function howToClick() {
     buildHowToScreen();
 }
 function startGameFromHowTo() {
-    startGameClick();
+    game.start();
 }
 function playAgainFromVictory() {
     destroyWinScreen();
@@ -92,7 +93,7 @@ function playAgainFromFailure() {
 
 
 /*EVENT LISTENERS------------------------------------------------------------------------*/
-startBtn.addEventListener('click', () => game.startGameClick());
+startBtn.addEventListener('click', () => game.start());
 howToBtn.addEventListener('click', () => howToClick());
 playBtn.addEventListener('click', () => startGameFromHowTo());
 winBtn.addEventListener('click', () => playAgainFromVictory());

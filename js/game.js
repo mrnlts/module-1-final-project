@@ -8,8 +8,10 @@ class Game {
         this.table2Btn = this.table2.addEventListener('click', ()=> {this.assignTable(table2); this.lunchCountdown(table2);});
         this.table3Btn = this.table3.addEventListener('click', ()=> {this.assignTable(table3); this.lunchCountdown(table3);});
         this.table4Btn = this.table4.addEventListener('click', ()=> {this.assignTable(table4); this.lunchCountdown(table4);});
-        //     this.customers = options.customers;
-        //     this.spots = options.spots;
+        //this.queueArr = [];
+        //this.tableArr = [table1, table2, table3, table4];
+        //this.customers = options.customers;
+        //this.spots = options.spots;
     }
     countdown(start, target) {
         function getTime() {
@@ -49,12 +51,17 @@ class Game {
             tableNum.innerHTML = '<p class="finished-eating">Collect!</p>';
         }
     }
+    collectBill(){
+
+    }
     patienceCountdown(){
 
     }
     customerArrives(spot) {
+        let randomCustomer = customersArr[this.randomNumGenerator(4)];
         let queueElem = document.getElementById(spot);
         queueElem.classList.remove("hide");
+        queueElem.innerHTML = `<img src=${randomCustomer}>`;
         queueElem.classList.add("show");
     }
     buildQueue() {
@@ -82,11 +89,14 @@ class Game {
     btnCountdown(tableNum) {
         tableNum.innerHTML = this.gameCountdown();
     }
-    startGameClick() {
+    start() {
         destroySplashScreen();
         destroyHowTo();
         buildGameScreen();
         this.countdown(300, timer);
         this.buildQueue();
+    }
+     randomNumGenerator(range){
+        return Math.round(Math.random()*range);
     }
 }

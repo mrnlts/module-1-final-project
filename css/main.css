@@ -10,6 +10,8 @@
 .hide{
     display: none;
 }
+
+/*BUTTONS--------------------------------------------------------------------------------*/
 button {
     height: 17%;
     width: 30%;
@@ -47,6 +49,7 @@ button span:nth-child(1) {--n: 1;}
 button span:nth-child(2) {--n: 2;}
 button span:nth-child(3) {--n: 3;}
 button span:nth-child(4) {--n: 4;}
+.finished-eating {font-size: 26px; background-color: green; padding: 0; margin: 0;}
 
 
 /*SPLASH SCREEN--------------------------------------------------------------------------*/

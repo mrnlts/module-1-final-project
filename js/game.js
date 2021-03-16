@@ -44,6 +44,10 @@ class Game {
     }
     lunchCountdown(tableNum){
         this.countdown(10, tableNum);
+        setTimeout(collectBtn, 11000);
+        function collectBtn() {
+            tableNum.innerHTML = '<p class="finished-eating">Collect!</p>';
+        }
     }
     patienceCountdown(){
 
@@ -65,7 +69,7 @@ class Game {
     }
     assignTable(tableNum) {
         let originalTableNum = tableNum.innerText;
-        tableNum.innerHTML = originalTableNum + spot1.innerHTML;
+        tableNum.innerHTML =spot1.innerHTML;
         spot1.innerHTML = spot2.innerHTML;
         spot2.innerHTML = spot3.innerHTML;
         spot3.innerHTML = spot4.innerHTML;

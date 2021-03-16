@@ -59,6 +59,7 @@ function buildGameScreen() {
     timer.classList.add("show");
     tables.classList.remove("hide");
     tables.classList.add("show");
+    setTimeout(buildLoseScreen, 300000);
 }
 function buildWinScreen() {
     destroyGame();

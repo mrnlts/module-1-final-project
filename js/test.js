@@ -4,10 +4,10 @@ class Game {
         this.table2 = table2;
         this.table3 = table3;
         this.table4 = table4;
-        this.table1Btn = this.table1.addEventListener('click', ()=> {this.assignTable(table1); this.lunchCountdown(table1);});
-        this.table2Btn = this.table2.addEventListener('click', ()=> {this.assignTable(table2); this.lunchCountdown(table2);});
-        this.table3Btn = this.table3.addEventListener('click', ()=> {this.assignTable(table3); this.lunchCountdown(table3);});
-        this.table4Btn = this.table4.addEventListener('click', ()=> {this.assignTable(table4); this.lunchCountdown(table4);});
+        this.table1Btn = this.table1.addEventListener('click', ()=> {this.assignTable(table1); this.btnCountdown(table1);});
+        this.table2Btn = this.table2.addEventListener('click', ()=> {this.assignTable(table2); this.btnCountdown(table2);});
+        this.table3Btn = this.table3.addEventListener('click', ()=> {this.assignTable(table3); this.btnCountdown(table3);});
+        this.table4Btn = this.table4.addEventListener('click', ()=> {this.assignTable(table4); this.btnCountdown(table4);});
         //     this.customers = options.customers;
         //     this.spots = options.spots;
     }
@@ -26,27 +26,24 @@ class Game {
                     }
                 }
             }
-            return target.innerText = `${getMinutes()}:${getSeconds()}`;
+        return target.innerText = `${getMinutes()}:${getSeconds()}`;
         }
         function substract() {
             if (start >= 0) {
                 getTime();
                 start--;
             } else {
-                clearInterval(subsInt);
+                clearInterval(timeInterval);
                 return;
             }
         }
-        let subsInt = setInterval(() => substract(), 1000);
+        let timeInterval = setInterval(() => substract(), 1000);
     }
-    gameCountdown() {
+    gameCountdown(){
         this.countdown(300, timer);
     }
-    lunchCountdown(tableNum){
-        this.countdown(10, tableNum);
-    }
-    patienceCountdown(){
-
+    btnCountdown(tableNum) {
+        tableNum.innerHTML = this.countdown(10, tableNum);
     }
     customerArrives(spot) {
         let queueElem = document.getElementById(spot);
@@ -75,14 +72,11 @@ class Game {
         spot7.innerHTML = spot8.innerHTML;
         spot8.innerHTML = '';
     }
-    btnCountdown(tableNum) {
-        tableNum.innerHTML = this.gameCountdown();
-    }
     startGameClick() {
         destroySplashScreen();
         destroyHowTo();
         buildGameScreen();
-        this.countdown(300, timer);
+        this.gameCountdown();
         this.buildQueue();
     }
 }

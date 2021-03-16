@@ -4,15 +4,14 @@ class Game {
         this.table2 = table2;
         this.table3 = table3;
         this.table4 = table4;
-        this.table1Btn = this.table1.addEventListener('click', ()=> this.assignTable(table1));
-        this.table2Btn = this.table2.addEventListener('click', ()=> this.assignTable(table2));
-        this.table3Btn = this.table3.addEventListener('click', ()=> this.assignTable(table3));
-        this.table4Btn = this.table4.addEventListener('click', ()=> this.assignTable(table4));
+        this.table1Btn = this.table1.addEventListener('click', ()=> {this.assignTable(table1); this.btnCountdown(table1);});
+        this.table2Btn = this.table2.addEventListener('click', ()=> {this.assignTable(table2); this.btnCountdown(table2);});
+        this.table3Btn = this.table3.addEventListener('click', ()=> {this.assignTable(table3); this.btnCountdown(table3);});
+        this.table4Btn = this.table4.addEventListener('click', ()=> {this.assignTable(table4); this.btnCountdown(table4);});
         //     this.customers = options.customers;
         //     this.spots = options.spots;
     }
-    countdown() {
-        let start = 300;
+    countdown(start, target) {
         function countdown() {
             function getMinutes() { return "0" + Math.floor(start / 60); }
             let rest = Math.round(start % 60);
@@ -27,7 +26,7 @@ class Game {
                     }
                 }
             }
-            return timer.innerText = `${getMinutes()}:${getSeconds()}`;
+            return target.innerText = `${getMinutes()}:${getSeconds()}`;
         }
         function substract() {
             if (start >= 0) {
@@ -68,11 +67,14 @@ class Game {
         spot7.innerHTML = spot8.innerHTML;
         spot8.innerHTML = '';
     }
+    btnCountdown(tableNum) {
+        tableNum.innerHTML = this.countdown(10, tableNum);
+    }
     startGameClick() {
         destroySplashScreen();
         destroyHowTo();
         buildGameScreen();
-        this.countdown();
+        this.countdown(300, timer);
         this.buildQueue();
     }
 }
